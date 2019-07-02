@@ -29,7 +29,7 @@ app.use(cookieParser('secret'));
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Once again Rusty wins cutest dog!",
+    secret: "Once again Alisher finished this project!",
     resave: false,
     saveUninitialized: false
 }));
@@ -53,6 +53,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
+app.listen(3000, function(){
+   console.log("Сервер начал свою работу");
 });
