@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<div class="container" style="margin-top: 20px">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">ФИО</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Общая стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(function(user, index){ %>
+      <tr ondblclick="openLink('<%=user._id%>/edit')" oncontextmenu="deletePage('<%=user._id%>/delete');return false;"">
+        <th scope=" row"><%= index+1 %></th>
+        <td><%= user.name %></td>
+        <td><%= user.quentity %></td>
+        <td><%= user.overAllCost %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div class="btn-md">
+  <a href="/add" class="btn btn-dark">Добавить</a>
+</div>
+
+<script>
+  $("tbody").on("click", "tr", function () {
+    $(this).toggleClass("completed");
+  });
+</script>
+
+<script>
+  function openLink(link) {
+    location.href = link;
+  }
+  function deletePage(linkToDeletePage) {
+    location.href = linkToDeletePage;
+  }
+</script>
+
+
+<% include ./partials/footer %>

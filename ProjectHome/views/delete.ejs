@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="deletePage">
+        <div class="card">
+            <h5 class="card-header">Подтвердите удаление</h5>
+            <div class="card-body">
+                <p class="card-text">Вы действительно хотите удалить запись сотрудника <%= user.name %>?</p>
+                <form action="/<%=user._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Удалить</button>
+                    <a href="/" class="btn btn-primary">Отменить</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

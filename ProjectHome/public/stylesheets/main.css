@@ -1,0 +1,17 @@
+.completed {
+  background-color: yellow;
+  color: gray;
+}
+.btn-md {
+  text-align: center;
+}
+
+.deletePage{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.fa-chevron-circle-down{
+  color: green;
+  font-size: 30px;
+}
